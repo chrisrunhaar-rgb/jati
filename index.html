@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JATI — Jala Transformasi</title>
+  <title>JATI — Jala Transformasi Indonesia</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --black: #0f0f0f;
+      --black: #111111;
       --white: #fafafa;
-      --gray: #6b6b6b;
-      --light: #e8e8e8;
+      --gray: #666666;
+      --light: #e4e4e4;
+      --accent: #2c6e49;
     }
 
     body {
@@ -21,79 +22,218 @@
       background: var(--white);
       color: var(--black);
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
+    /* ── HEADER ── */
     header {
-      padding: 2.5rem 3rem;
+      padding: 1.75rem 3rem;
       border-bottom: 1px solid var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .logo {
-      font-size: 0.75rem;
-      font-weight: 500;
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-wrap img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      font-size: 0.7rem;
+      font-weight: 600;
       letter-spacing: 0.3em;
       text-transform: uppercase;
       color: var(--black);
+      line-height: 1.3;
     }
 
-    main {
-      flex: 1;
+    .logo-text span {
+      display: block;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      color: var(--gray);
+    }
+
+    /* ── LANGUAGE TOGGLE ── */
+    .lang-toggle {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 3rem;
+      gap: 0;
+      border: 1px solid var(--light);
+      border-radius: 4px;
+      overflow: hidden;
     }
 
+    .lang-toggle button {
+      background: none;
+      border: none;
+      padding: 0.4rem 0.85rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      color: var(--gray);
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .lang-toggle button.active {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    /* ── HERO ── */
     .hero {
-      max-width: 520px;
-      text-align: center;
+      padding: 6rem 3rem 5rem;
+      max-width: 680px;
+    }
+
+    .hero-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
     }
 
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(1.8rem, 4vw, 2.75rem);
       font-weight: 300;
       line-height: 1.2;
       letter-spacing: -0.02em;
       margin-bottom: 1.5rem;
-      color: var(--black);
     }
 
     .hero p {
       font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.7;
+      line-height: 1.75;
+      color: var(--gray);
+      max-width: 520px;
+    }
+
+    /* ── DIVIDER ── */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--light);
+      margin: 0 3rem;
+      width: calc(100% - 6rem);
+    }
+
+    /* ── PROGRAMS ── */
+    .programs {
+      padding: 4rem 3rem;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
       color: var(--gray);
       margin-bottom: 2.5rem;
     }
 
-    .divider {
-      width: 2rem;
-      height: 1px;
-      background: var(--black);
-      margin: 0 auto 2.5rem;
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1px;
+      background: var(--light);
+      border: 1px solid var(--light);
     }
 
-    .contact {
-      font-size: 0.8rem;
+    .program-item {
+      background: var(--white);
+      padding: 1.75rem 2rem;
+    }
+
+    .program-item h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      color: var(--black);
+    }
+
+    .program-duration {
+      font-size: 0.7rem;
       font-weight: 500;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .program-item p {
+      font-size: 0.85rem;
+      line-height: 1.65;
+      color: var(--gray);
+    }
+
+    /* ── MEMBERSHIP ── */
+    .membership {
+      padding: 4rem 3rem;
+      border-top: 1px solid var(--light);
+      background: #f5f5f3;
+    }
+
+    .membership p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--gray);
+      max-width: 580px;
+      margin-top: 1rem;
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      padding: 4rem 3rem;
+      border-top: 1px solid var(--light);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-item dt {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--gray);
-      text-decoration: none;
-      border-bottom: 1px solid var(--light);
-      padding-bottom: 2px;
-      transition: color 0.2s, border-color 0.2s;
+      margin-bottom: 0.4rem;
     }
 
-    .contact:hover {
+    .contact-item dd {
+      font-size: 0.9rem;
       color: var(--black);
+      line-height: 1.5;
+    }
+
+    .contact-item dd a {
+      color: var(--black);
+      text-decoration: none;
+      border-bottom: 1px solid var(--light);
+      transition: border-color 0.15s;
+    }
+
+    .contact-item dd a:hover {
       border-color: var(--black);
     }
 
+    /* ── FOOTER ── */
     footer {
-      padding: 2rem 3rem;
+      padding: 1.5rem 3rem;
       border-top: 1px solid var(--light);
       display: flex;
       justify-content: space-between;
@@ -103,38 +243,174 @@
     footer span {
       font-size: 0.75rem;
       color: var(--gray);
-      letter-spacing: 0.05em;
     }
 
-    @media (max-width: 600px) {
-      header, footer { padding: 1.5rem; }
-      main { padding: 3rem 1.5rem; }
-      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    /* ── MOBILE ── */
+    @media (max-width: 640px) {
+      header, .hero, .programs, .membership, .contact-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+      footer { padding: 1.25rem 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+      .hero { padding-top: 3.5rem; }
     }
+
+    /* ── LANGUAGE VISIBILITY ── */
+    [data-lang] { display: none; }
+    .lang-id [data-lang="id"] { display: block; }
+    .lang-id [data-lang="id"].inline { display: inline; }
+    .lang-en [data-lang="en"] { display: block; }
+    .lang-en [data-lang="en"].inline { display: inline; }
   </style>
 </head>
-<body>
+<body class="lang-id">
 
+  <!-- HEADER -->
   <header>
-    <div class="logo">JATI</div>
+    <div class="logo-wrap">
+      <img src="assets/logo.png" alt="JATI Logo">
+      <div class="logo-text">
+        JATI
+        <span>Jala Transformasi Indonesia</span>
+      </div>
+    </div>
+    <div class="lang-toggle">
+      <button id="btn-id" class="active" onclick="setLang('id')">IND</button>
+      <button id="btn-en" onclick="setLang('en')">ENG</button>
+    </div>
   </header>
 
-  <main>
-    <div class="hero">
-      <h1>Jala Transformasi</h1>
-      <div class="divider"></div>
-      <p>
-        Sumber daya kepemimpinan lintas budaya untuk mereka yang dipanggil
-        untuk melayani di luar batas budaya dan bangsa.
-      </p>
-      <a href="mailto:chris@crispydevelopment.com" class="contact">Hubungi Kami</a>
-    </div>
-  </main>
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-tag">Yayasan Jala Transformasi Indonesia</p>
+    <h1 data-lang="id">Membawa Transformasi Menyeluruh dan Berkelanjutan di Indonesia</h1>
+    <h1 data-lang="en">Bringing Comprehensive and Sustainable Transformation in Indonesia</h1>
+    <p data-lang="id">
+      JATI memobilisasi Gereja, melengkapi dan melayani mitra pelayanan untuk
+      memberdayakan komunitas — memungkinkan transformasi di tingkat individu,
+      keluarga, dan masyarakat.
+    </p>
+    <p data-lang="en">
+      JATI mobilises the Church, equips and serves ministry partners to empower
+      communities — enabling transformation at the individual, family, and
+      community level.
+    </p>
+  </section>
 
+  <div class="section-divider"></div>
+
+  <!-- PROGRAMS -->
+  <section class="programs">
+    <p class="section-label" data-lang="id">Program Kami</p>
+    <p class="section-label" data-lang="en">Our Programmes</p>
+
+    <div class="program-grid">
+
+      <div class="program-item">
+        <h3 data-lang="id">Magang JATI</h3>
+        <h3 data-lang="en">JATI Internship</h3>
+        <p class="program-duration" data-lang="id">6–24 Bulan · Penuh Waktu</p>
+        <p class="program-duration" data-lang="en">6–24 Months · Full Time</p>
+        <p data-lang="id">Pengembangan karakter, pelatihan lintas budaya, pengalaman lapangan, dan pembinaan pribadi untuk mereka yang melayani komunitas terpinggirkan.</p>
+        <p data-lang="en">Character development, cross-cultural training, field experience, and personal coaching for those serving underserved communities.</p>
+      </div>
+
+      <div class="program-item">
+        <h3 data-lang="id">Menggalang Dana</h3>
+        <h3 data-lang="en">Fundraising Course</h3>
+        <p class="program-duration" data-lang="id">3 Bulan · Paruh Waktu</p>
+        <p class="program-duration" data-lang="en">3 Months · Part Time</p>
+        <p data-lang="id">Kursus membangun relasi, penggalangan dana yang transparan, dan kestabilan keuangan untuk pekerja pelayanan jangka panjang.</p>
+        <p data-lang="en">A course on relationship-building, transparent fundraising, and financial stability for long-term service workers.</p>
+      </div>
+
+      <div class="program-item">
+        <h3>Coaching Course</h3>
+        <p class="program-duration" data-lang="id">4 Hari · Tatap Muka</p>
+        <p class="program-duration" data-lang="en">4 Days · In Person</p>
+        <p data-lang="id">Pelatihan dasar coaching, mendengar aktif, pemecahan masalah, dan pemberdayaan kepemimpinan.</p>
+        <p data-lang="en">Coaching fundamentals, active listening, problem-solving, and leadership empowerment skills.</p>
+      </div>
+
+      <div class="program-item">
+        <h3 data-lang="id">Seminar Mobilisasi</h3>
+        <h3 data-lang="en">Mobilisation Seminar</h3>
+        <p class="program-duration" data-lang="id">Jadwal Fleksibel</p>
+        <p class="program-duration" data-lang="en">Flexible Schedule</p>
+        <p data-lang="id">Peran gereja dan komunitas dalam transformasi, mengidentifikasi kebutuhan regional, dan membangun jaringan mitra JATI.</p>
+        <p data-lang="en">The role of church and community in transformation, identifying regional needs, and building networks with JATI partners.</p>
+      </div>
+
+      <div class="program-item">
+        <h3 data-lang="id">Kursus Lintas Budaya</h3>
+        <h3 data-lang="en">Cross-Cultural Training</h3>
+        <p class="program-duration" data-lang="id">2 Minggu · 60 Modul</p>
+        <p class="program-duration" data-lang="en">2 Weeks · 60 Modules</p>
+        <p data-lang="id">Program intensif tentang teologi, pemahaman budaya, membangun relasi, dan fondasi rohani untuk pelayanan lintas budaya.</p>
+        <p data-lang="en">An intensive programme on theology, cultural understanding, relationship-building, and spiritual foundations for cross-cultural service.</p>
+      </div>
+
+      <div class="program-item">
+        <h3 data-lang="id">Pelatihan Perlindungan Anak</h3>
+        <h3 data-lang="en">Child Protection Training</h3>
+        <p class="program-duration" data-lang="id">Online &amp; Lapangan</p>
+        <p class="program-duration" data-lang="en">Online &amp; Field-Based</p>
+        <p data-lang="id">Memastikan penerapan standar keselamatan anak yang konsisten di seluruh organisasi mitra JATI.</p>
+        <p data-lang="en">Ensuring consistent implementation of child safety standards across all JATI partner organisations.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP -->
+  <section class="membership">
+    <p class="section-label" data-lang="id">Keanggotaan</p>
+    <p class="section-label" data-lang="en">Membership</p>
+    <p data-lang="id">
+      Yayasan Jala Transformasi Indonesia adalah anggota resmi <strong>ALUSIA</strong> —
+      Aliansi Lembaga Pengutusan Indonesia, memastikan standar dan akuntabilitas
+      pelayanan misi di seluruh Indonesia.
+    </p>
+    <p data-lang="en">
+      Yayasan Jala Transformasi Indonesia holds official membership with <strong>ALUSIA</strong> —
+      the Alliance of Indonesian Sending Organisations, ensuring standards and
+      accountability in mission work across Indonesia.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section">
+    <p class="section-label" data-lang="id">Kontak Kami</p>
+    <p class="section-label" data-lang="en">Contact Us</p>
+    <dl class="contact-grid">
+      <div class="contact-item">
+        <dt data-lang="id">Alamat</dt>
+        <dt data-lang="en">Address</dt>
+        <dd>Jl. Bypass Ngurah Rai 291<br>Sanur, Bali</dd>
+      </div>
+      <div class="contact-item">
+        <dt>Email</dt>
+        <dd><a href="mailto:info@jala-transformasi.net">info@jala-transformasi.net</a></dd>
+      </div>
+      <div class="contact-item">
+        <dt>WhatsApp</dt>
+        <dd><a href="https://wa.me/6285337271106">+62 853 3727 1106</a></dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <span>jala-transformasi.net</span>
-    <span>&copy; 2026 JATI</span>
+    <span data-lang="id">&copy; 2026 Yayasan Jala Transformasi Indonesia</span>
+    <span data-lang="en">&copy; 2026 Yayasan Jala Transformasi Indonesia</span>
   </footer>
+
+  <script>
+    function setLang(lang) {
+      document.body.className = 'lang-' + lang;
+      document.getElementById('btn-id').classList.toggle('active', lang === 'id');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.documentElement.lang = lang;
+    }
+  </script>
 
 </body>
 </html>
