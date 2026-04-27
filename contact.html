@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak — JATI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .contact-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; margin-top: 3rem; align-items: start;
+    }
+    .contact-details dt {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.38em;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 0.5rem; margin-top: 2rem;
+    }
+    .contact-details dt:first-child { margin-top: 0; }
+    .contact-details dd { font-size: 0.95rem; color: var(--text); line-height: 1.6; }
+    .contact-details dd a {
+      color: var(--text); text-decoration: none;
+      border-bottom: 1px solid var(--light); transition: border-color 0.15s, color 0.15s;
+    }
+    .contact-details dd a:hover { color: var(--blue); border-color: var(--blue); }
+
+    .contact-aside {
+      background: var(--off); padding: 2.5rem;
+    }
+    .contact-aside h3 {
+      font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 1rem;
+    }
+    .contact-aside p { font-size: 0.875rem; line-height: 1.75; color: var(--gray); margin-bottom: 1rem; }
+    .contact-aside p:last-child { margin-bottom: 0; }
+
+    .map-placeholder {
+      margin-top: 3rem; height: 320px;
+      background: url('assets/field_landscape.jpg') center / cover no-repeat;
+      position: relative;
+    }
+    .map-placeholder-overlay {
+      position: absolute; inset: 0; background: rgba(14,22,64,0.5);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .map-placeholder-overlay p {
+      color: #fff; font-size: 0.85rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+  </style>
+</head>
+<body class="lang-id">
+
+<!-- NAV -->
+<nav class="solid" id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logo.png" alt="JATI">
+    <div class="nav-logo-text">JATI <span>Jala Transformasi Indonesia</span></div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="about.html"                  data-lang="id">Tentang Kami</a><a href="about.html"                  data-lang="en">About</a></li>
+      <li><a href="programs.html"               data-lang="id">Program</a>     <a href="programs.html"               data-lang="en">Programmes</a></li>
+      <li><a href="contact.html" class="active" data-lang="id">Kontak</a>      <a href="contact.html" class="active" data-lang="en">Contact</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button id="btn-id" class="active" onclick="setLang('id')">IND</button>
+      <button id="btn-en"               onclick="setLang('en')">ENG</button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <p class="eyebrow" data-lang="id">Kontak Kami</p>
+  <p class="eyebrow" data-lang="en">Contact Us</p>
+  <h1 data-lang="id">Ingin tahu lebih lanjut atau <strong>bermitra bersama kami?</strong></h1>
+  <h1 data-lang="en">Want to learn more or <strong>partner with us?</strong></h1>
+  <p data-lang="id">Kami terbuka untuk kemitraan, pertanyaan program, dan kolaborasi dengan siapa saja yang memiliki visi serupa.</p>
+  <p data-lang="en">We are open to partnerships, programme enquiries, and collaboration with anyone who shares a similar vision.</p>
+</div>
+
+<!-- CONTACT CONTENT -->
+<section class="section">
+  <div class="section-inner">
+    <div class="contact-layout">
+      <dl class="contact-details">
+        <dt data-lang="id">Alamat Kantor</dt>
+        <dt data-lang="en">Office Address</dt>
+        <dd>Jl. Bypass Ngurah Rai 291<br>Sanur, Denpasar Selatan<br>Kota Denpasar, Bali</dd>
+
+        <dt>Email</dt>
+        <dd><a href="mailto:info@jala-transformasi.net">info@jala-transformasi.net</a></dd>
+
+        <dt>WhatsApp</dt>
+        <dd><a href="https://wa.me/6285337271106">+62 853 3727 1106</a></dd>
+
+        <dt data-lang="id">Anggota</dt>
+        <dt data-lang="en">Membership</dt>
+        <dd data-lang="id">Yayasan Jala Transformasi Indonesia adalah anggota resmi <strong>ALUSIA</strong> — Aliansi Lembaga Pengutusan Indonesia.</dd>
+        <dd data-lang="en">Yayasan Jala Transformasi Indonesia holds official membership with <strong>ALUSIA</strong> — the Alliance of Indonesian Sending Organisations.</dd>
+
+        <dt data-lang="id">Legalitas</dt>
+        <dt data-lang="en">Legal Registration</dt>
+        <dd>AHU-0037468.AH.01.12.TAHUN 2025<br>NPWP: 212651327907000</dd>
+      </dl>
+
+      <div>
+        <div class="contact-aside">
+          <h3 data-lang="id">Pertanyaan Umum</h3>
+          <h3 data-lang="en">General Enquiries</h3>
+          <p data-lang="id">Untuk pertanyaan umum tentang JATI, program, atau kemitraan, hubungi kami melalui email atau WhatsApp. Kami akan merespons dalam 2–3 hari kerja.</p>
+          <p data-lang="en">For general questions about JATI, our programmes, or partnership, contact us via email or WhatsApp. We respond within 2–3 working days.</p>
+        </div>
+        <div class="contact-aside" style="margin-top:1px; background:var(--white); border:1px solid var(--light)">
+          <h3 data-lang="id">Kemitraan &amp; Kolaborasi</h3>
+          <h3 data-lang="en">Partnerships &amp; Collaboration</h3>
+          <p data-lang="id">JATI terbuka untuk kemitraan dengan organisasi, gereja, dan lembaga yang memiliki visi yang sejalan. Kirimkan pesan singkat tentang organisasi Anda dan bagaimana kita bisa berkolaborasi.</p>
+          <p data-lang="en">JATI is open to partnerships with organisations, churches, and institutions that share an aligned vision. Send us a brief message about your organisation and how we might collaborate.</p>
+          <a href="mailto:info@jala-transformasi.net" class="btn btn-primary" data-lang="id" style="margin-top:1rem;display:inline-block">Kirim Email</a>
+          <a href="mailto:info@jala-transformasi.net" class="btn btn-primary" data-lang="en" style="margin-top:1rem;display:inline-block">Send Email</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>&copy; 2026 Yayasan Jala Transformasi Indonesia</span>
+  <div class="footer-links">
+    <a href="privacy.html" data-lang="id">Kebijakan Privasi</a>
+    <a href="privacy.html" data-lang="en">Privacy Policy</a>
+    <a href="terms.html"   data-lang="id">Syarat &amp; Ketentuan</a>
+    <a href="terms.html"   data-lang="en">Terms of Service</a>
+  </div>
+  <span>jala-transformasi.net</span>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.body.className = 'lang-' + lang;
+    document.getElementById('btn-id').classList.toggle('active', lang === 'id');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.documentElement.lang = lang;
+  }
+</script>
+</body>
+</html>

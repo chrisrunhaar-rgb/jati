@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Program — JATI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .program-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1px; background: var(--light); margin-top: 3rem;
+    }
+    .program-card { background: var(--white); padding: 2.5rem 2rem; }
+    .program-num {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.38em;
+      color: var(--blue); margin-bottom: 0.9rem;
+    }
+    .program-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-bottom: 0.35rem; }
+    .program-meta {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--gray); margin-bottom: 1rem;
+    }
+    .program-card p { font-size: 0.9rem; line-height: 1.7; color: var(--gray); }
+    .program-card ul {
+      margin-top: 0.75rem; margin-left: 1rem;
+      font-size: 0.875rem; line-height: 1.7; color: var(--gray);
+    }
+    .program-card ul li { margin-bottom: 0.25rem; }
+  </style>
+</head>
+<body class="lang-id">
+
+<!-- NAV -->
+<nav class="solid" id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logo.png" alt="JATI">
+    <div class="nav-logo-text">JATI <span>Jala Transformasi Indonesia</span></div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="about.html"                  data-lang="id">Tentang Kami</a><a href="about.html"                  data-lang="en">About</a></li>
+      <li><a href="programs.html" class="active" data-lang="id">Program</a>     <a href="programs.html" class="active" data-lang="en">Programmes</a></li>
+      <li><a href="contact.html"                 data-lang="id">Kontak</a>      <a href="contact.html"                 data-lang="en">Contact</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button id="btn-id" class="active" onclick="setLang('id')">IND</button>
+      <button id="btn-en"               onclick="setLang('en')">ENG</button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <p class="eyebrow" data-lang="id">Program Kami</p>
+  <p class="eyebrow" data-lang="en">Our Programmes</p>
+  <h1 data-lang="id">Melatih dan mendampingi <strong>tenaga lapangan</strong> di seluruh Indonesia</h1>
+  <h1 data-lang="en">Training and equipping <strong>field workers</strong> across Indonesia</h1>
+  <p data-lang="id">Setiap program dirancang untuk membangun kapasitas jangka panjang — karakter, kepemimpinan, dan ketahanan untuk pelayanan yang berkelanjutan.</p>
+  <p data-lang="en">Each programme builds long-term capacity — character, leadership, and resilience for sustained service.</p>
+</div>
+
+<!-- PROGRAMS GRID -->
+<section class="section">
+  <div class="section-inner">
+    <div class="program-grid">
+
+      <div class="program-card">
+        <p class="program-num">01</p>
+        <h3 data-lang="id">Magang JATI</h3>
+        <h3 data-lang="en">JATI Internship</h3>
+        <p class="program-meta" data-lang="id">6–24 Bulan · Penuh Waktu</p>
+        <p class="program-meta" data-lang="en">6–24 Months · Full Time</p>
+        <p data-lang="id">Program magang intensif yang mempersiapkan calon tenaga lapangan melalui pelatihan terintegrasi, pembinaan pribadi, dan pengalaman langsung di lapangan.</p>
+        <p data-lang="en">An intensive internship programme preparing future field workers through integrated training, personal coaching, and hands-on field experience.</p>
+        <ul data-lang="id">
+          <li>Pengembangan karakter dan kepemimpinan</li>
+          <li>Pelatihan lintas budaya</li>
+          <li>Pengalaman lapangan di berbagai pulau</li>
+          <li>Pendampingan oleh mentor berpengalaman</li>
+        </ul>
+        <ul data-lang="en">
+          <li>Character and leadership development</li>
+          <li>Cross-cultural training</li>
+          <li>Field experience across multiple islands</li>
+          <li>Mentoring by experienced practitioners</li>
+        </ul>
+      </div>
+
+      <div class="program-card">
+        <p class="program-num">02</p>
+        <h3>Coaching Course</h3>
+        <p class="program-meta" data-lang="id">4 Hari · Tatap Muka</p>
+        <p class="program-meta" data-lang="en">4 Days · In Person</p>
+        <p data-lang="id">Pelatihan coaching berbasis praktik yang membekali pemimpin dengan kemampuan mendengar aktif, mengajukan pertanyaan yang tepat, dan memberdayakan orang lain.</p>
+        <p data-lang="en">A practice-based coaching training that equips leaders with active listening skills, the ability to ask the right questions, and to empower others.</p>
+        <ul data-lang="id">
+          <li>Dasar-dasar coaching yang efektif</li>
+          <li>Mendengar aktif dan empati</li>
+          <li>Pemecahan masalah berbasis coaching</li>
+          <li>Pemberdayaan kepemimpinan tim</li>
+        </ul>
+        <ul data-lang="en">
+          <li>Foundations of effective coaching</li>
+          <li>Active listening and empathy</li>
+          <li>Coaching-based problem solving</li>
+          <li>Team leadership empowerment</li>
+        </ul>
+      </div>
+
+      <div class="program-card">
+        <p class="program-num">03</p>
+        <h3 data-lang="id">Kursus Lintas Budaya (KLB)</h3>
+        <h3 data-lang="en">Cross-Cultural Training (KLB)</h3>
+        <p class="program-meta" data-lang="id">2 Minggu · 60 Modul · Intensif</p>
+        <p class="program-meta" data-lang="en">2 Weeks · 60 Modules · Intensive</p>
+        <p data-lang="id">Kursus intensif dua minggu yang membekali tenaga lapangan dengan pemahaman mendalam tentang dinamika lintas budaya dan fondasi pelayanan holistik.</p>
+        <p data-lang="en">An intensive two-week course equipping field workers with deep understanding of cross-cultural dynamics and foundations for holistic service.</p>
+        <ul data-lang="id">
+          <li>Pemahaman budaya dan identitas</li>
+          <li>Membangun relasi lintas komunitas</li>
+          <li>Teologi pelayanan holistik</li>
+          <li>Fondasi spiritual untuk pelayanan jangka panjang</li>
+        </ul>
+        <ul data-lang="en">
+          <li>Cultural understanding and identity</li>
+          <li>Cross-community relationship building</li>
+          <li>Theology of holistic service</li>
+          <li>Spiritual foundations for long-term service</li>
+        </ul>
+      </div>
+
+      <div class="program-card">
+        <p class="program-num">04</p>
+        <h3 data-lang="id">Seminar Mobilisasi</h3>
+        <h3 data-lang="en">Mobilisation Seminar</h3>
+        <p class="program-meta" data-lang="id">Jadwal Fleksibel · Berbagai Lokasi</p>
+        <p class="program-meta" data-lang="en">Flexible Schedule · Multiple Locations</p>
+        <p data-lang="id">Seminar yang menggerakkan gereja dan komunitas lokal untuk berpartisipasi aktif dalam menjangkau daerah yang belum terlayani.</p>
+        <p data-lang="en">A seminar that mobilises churches and local communities to actively participate in reaching underserved areas.</p>
+        <ul data-lang="id">
+          <li>Peran gereja dalam transformasi masyarakat</li>
+          <li>Identifikasi kebutuhan regional</li>
+          <li>Membangun jaringan mitra lokal</li>
+          <li>Jalur keterlibatan praktis</li>
+        </ul>
+        <ul data-lang="en">
+          <li>The role of the church in community transformation</li>
+          <li>Identifying regional needs</li>
+          <li>Building local partner networks</li>
+          <li>Practical pathways for involvement</li>
+        </ul>
+      </div>
+
+      <div class="program-card">
+        <p class="program-num">05</p>
+        <h3 data-lang="id">Pelatihan Menggalang Dana</h3>
+        <h3 data-lang="en">Fundraising Training</h3>
+        <p class="program-meta" data-lang="id">3 Bulan · Pendampingan Berkelanjutan</p>
+        <p class="program-meta" data-lang="en">3 Months · Ongoing Coaching</p>
+        <p data-lang="id">Pelatihan dan pendampingan untuk membangun relasi dengan pendukung, menggalang dana secara transparan, dan mencapai kestabilan keuangan sebagai pekerja lapangan.</p>
+        <p data-lang="en">Training and coaching to build relationships with supporters, raise funds transparently, and achieve financial stability as a field worker.</p>
+        <ul data-lang="id">
+          <li>Membangun jaringan pendukung pribadi</li>
+          <li>Komunikasi transparan dan akuntabel</li>
+          <li>Pengelolaan keuangan pribadi</li>
+          <li>Pendampingan individual oleh coach berpengalaman</li>
+        </ul>
+        <ul data-lang="en">
+          <li>Building a personal supporter network</li>
+          <li>Transparent and accountable communication</li>
+          <li>Personal financial management</li>
+          <li>Individual coaching by experienced practitioners</li>
+        </ul>
+      </div>
+
+      <div class="program-card">
+        <p class="program-num">06</p>
+        <h3 data-lang="id">Pelatihan Perlindungan Anak</h3>
+        <h3 data-lang="en">Child Protection Training</h3>
+        <p class="program-meta" data-lang="id">Online &amp; Lapangan · Wajib Semua Anggota</p>
+        <p class="program-meta" data-lang="en">Online &amp; Field-Based · Mandatory for All Members</p>
+        <p data-lang="id">Program pelatihan yang memastikan penerapan standar keselamatan anak yang konsisten di seluruh jaringan mitra JATI, sesuai dengan regulasi perlindungan anak yang berlaku.</p>
+        <p data-lang="en">A training programme ensuring consistent implementation of child safety standards across all JATI partner networks, in line with applicable child protection regulations.</p>
+        <ul data-lang="id">
+          <li>Kebijakan perlindungan anak JATI</li>
+          <li>Prosedur pelaporan dan respons</li>
+          <li>Kunjungan lapangan untuk evaluasi penerapan</li>
+          <li>Pelatihan online wajib tahunan</li>
+        </ul>
+        <ul data-lang="en">
+          <li>JATI child protection policy</li>
+          <li>Reporting and response procedures</li>
+          <li>Field visits for compliance evaluation</li>
+          <li>Mandatory annual online training</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FIELD BANNER -->
+<div class="field-banner">
+  <div class="field-overlay">
+    <blockquote data-lang="id">"Transformasi yang nyata dimulai dari komunitas yang diberdayakan untuk memimpin diri sendiri."</blockquote>
+    <blockquote data-lang="en">"Real transformation begins with communities empowered to lead themselves."</blockquote>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="section" style="text-align:center">
+  <div class="section-inner" style="max-width:560px">
+    <p class="eyebrow" data-lang="id">Tertarik?</p>
+    <p class="eyebrow" data-lang="en">Interested?</p>
+    <h2 data-lang="id" style="max-width:none">Ingin tahu lebih lanjut tentang program kami?</h2>
+    <h2 data-lang="en" style="max-width:none">Want to know more about our programmes?</h2>
+    <p class="section-lead" style="max-width:none" data-lang="id">Hubungi kami untuk informasi pendaftaran, jadwal, atau kemitraan program.</p>
+    <p class="section-lead" style="max-width:none" data-lang="en">Contact us for registration information, schedules, or programme partnerships.</p>
+    <a href="contact.html" class="btn btn-primary" data-lang="id">Hubungi Kami</a>
+    <a href="contact.html" class="btn btn-primary" data-lang="en">Contact Us</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>&copy; 2026 Yayasan Jala Transformasi Indonesia</span>
+  <div class="footer-links">
+    <a href="privacy.html" data-lang="id">Kebijakan Privasi</a>
+    <a href="privacy.html" data-lang="en">Privacy Policy</a>
+    <a href="terms.html"   data-lang="id">Syarat &amp; Ketentuan</a>
+    <a href="terms.html"   data-lang="en">Terms of Service</a>
+  </div>
+  <span>jala-transformasi.net</span>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.body.className = 'lang-' + lang;
+    document.getElementById('btn-id').classList.toggle('active', lang === 'id');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.documentElement.lang = lang;
+  }
+</script>
+</body>
+</html>

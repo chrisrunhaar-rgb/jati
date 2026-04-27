@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Kami — JATI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* ── ABOUT-SPECIFIC ── */
+    .vm-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--light); margin-top: 3rem;
+    }
+    .vm-block {
+      background: var(--white); padding: 3rem 2.5rem;
+    }
+    .vm-label {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.45em;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 1.25rem;
+    }
+    .vm-block blockquote {
+      font-size: 1.15rem; font-weight: 300; line-height: 1.65;
+      color: var(--text); letter-spacing: -0.01em;
+    }
+
+    /* ── IMAGE + TEXT ── */
+    .split {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center; margin-top: 3rem;
+    }
+    .split img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+    .split-text p {
+      font-size: 0.95rem; line-height: 1.85; color: var(--gray); margin-bottom: 1.1rem;
+    }
+
+    /* ── VALUES ── */
+    .values-bg { background: var(--off); }
+    .values-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1px; background: var(--light); margin-top: 2.5rem;
+    }
+    .value-card { background: var(--off); padding: 2rem; }
+    .value-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
+    .value-card p { font-size: 0.875rem; line-height: 1.65; color: var(--gray); }
+
+    /* ── LEGAL ── */
+    .legal-strip {
+      padding: 3rem; background: var(--blue);
+    }
+    .legal-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+    .legal-item dt {
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.35em;
+      text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.4rem;
+    }
+    .legal-item dd { font-size: 0.85rem; color: rgba(255,255,255,0.85); line-height: 1.5; }
+
+    @media (max-width: 768px) {
+      .vm-grid { grid-template-columns: 1fr; }
+      .split { grid-template-columns: 1fr; gap: 2rem; }
+      .legal-strip { padding: 2.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body class="lang-id">
+
+<!-- NAV -->
+<nav class="solid" id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logo.png" alt="JATI">
+    <div class="nav-logo-text">JATI <span>Jala Transformasi Indonesia</span></div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="about.html"    class="active" data-lang="id">Tentang Kami</a><a href="about.html"    class="active" data-lang="en">About</a></li>
+      <li><a href="programs.html"               data-lang="id">Program</a>     <a href="programs.html"               data-lang="en">Programmes</a></li>
+      <li><a href="contact.html"                data-lang="id">Kontak</a>      <a href="contact.html"                data-lang="en">Contact</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button id="btn-id" class="active" onclick="setLang('id')">IND</button>
+      <button id="btn-en"               onclick="setLang('en')">ENG</button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <p class="eyebrow" data-lang="id">Tentang Kami</p>
+  <p class="eyebrow" data-lang="en">About Us</p>
+  <h1 data-lang="id">Membangun fondasi kuat untuk <strong>transformasi berkelanjutan</strong></h1>
+  <h1 data-lang="en">Building strong foundations for <strong>lasting transformation</strong></h1>
+  <p data-lang="id">Yayasan Jala Transformasi Indonesia (JATI) adalah yayasan non-profit yang mendampingi dan melengkapi mitra pelayanan di seluruh Indonesia.</p>
+  <p data-lang="en">Yayasan Jala Transformasi Indonesia (JATI) is a non-profit foundation that mentors and equips service partners across Indonesia.</p>
+</div>
+
+<!-- VISION / MISSION -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow" data-lang="id">Visi &amp; Misi</p>
+    <p class="eyebrow" data-lang="en">Vision &amp; Mission</p>
+    <div class="vm-grid">
+      <div class="vm-block">
+        <p class="vm-label" data-lang="id">Visi</p>
+        <p class="vm-label" data-lang="en">Vision</p>
+        <blockquote data-lang="id">Terjadinya transformasi secara menyeluruh, utuh, dan berkelanjutan di Indonesia.</blockquote>
+        <blockquote data-lang="en"><!-- OFFICIAL ENGLISH VISION — to be confirmed by Chris --></blockquote>
+      </div>
+      <div class="vm-block" style="background:var(--off)">
+        <p class="vm-label" data-lang="id">Misi</p>
+        <p class="vm-label" data-lang="en">Mission</p>
+        <blockquote data-lang="id">Memberdayakan Masyarakat untuk mandiri, sejahtera membawa transformasi kepada kehidupan individu, keluarga, komunitas dan bangsa.</blockquote>
+        <blockquote data-lang="en"><!-- OFFICIAL ENGLISH MISSION — to be confirmed by Chris --></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE ARE -->
+<section class="section" style="background:var(--off); padding-top:0">
+  <div class="section-inner">
+    <div class="split">
+      <img src="assets/hero_circle_overhead.jpg" alt="">
+      <div class="split-text">
+        <p class="eyebrow" data-lang="id">Siapa Kami</p>
+        <p class="eyebrow" data-lang="en">Who We Are</p>
+        <h2 data-lang="id" style="margin-bottom:1.25rem">Organisasi yang <strong>berakar dalam</strong></h2>
+        <h2 data-lang="en" style="margin-bottom:1.25rem">An organisation with <strong>deep roots</strong></h2>
+        <p data-lang="id">Yayasan Jala Transformasi Indonesia berdiri secara resmi pada Mei 2024. Gagasan pendiriannya lahir dari kerinduan para pendiri untuk menghadirkan wadah yang dapat memberkati bangsa Indonesia, khususnya dalam bidang sosial, kemanusiaan, dan keagamaan.</p>
+        <p data-lang="en">Yayasan Jala Transformasi Indonesia was officially established in May 2024. The foundation grew from a shared desire among its founders to create an organisation that truly benefits the Indonesian people — especially in the social, humanitarian, and community development areas.</p>
+        <p data-lang="id">Kami percaya bahwa perubahan yang nyata dimulai dari dalam — dari pemimpin lokal yang diperlengkapi dengan baik untuk melayani komunitas mereka sendiri. Nama "Jala" mencerminkan jaringan: sebuah jala yang merangkul dan mengangkat bersama.</p>
+        <p data-lang="en">We believe real change starts from within — from local leaders well-equipped to serve their own communities. The name "Jala" means "net" — a network that embraces and lifts together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section values-bg">
+  <div class="section-inner">
+    <p class="eyebrow" data-lang="id">Nilai-Nilai Kami</p>
+    <p class="eyebrow" data-lang="en">Our Values</p>
+    <h2 data-lang="id">Landasan yang <strong>membentuk cara kami bekerja</strong></h2>
+    <h2 data-lang="en">The foundations that <strong>shape how we work</strong></h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <h3 data-lang="id">Transformasi Holistik</h3>
+        <h3 data-lang="en">Holistic Transformation</h3>
+        <p data-lang="id">Tidak hanya perubahan fisik, tetapi juga perubahan karakter, kepemimpinan, dan komunitas secara menyeluruh.</p>
+        <p data-lang="en">Not only physical change, but holistic transformation of character, leadership, and community.</p>
+      </div>
+      <div class="value-card">
+        <h3 data-lang="id">Pemberdayaan</h3>
+        <h3 data-lang="en">Empowerment</h3>
+        <p data-lang="id">Masyarakat sebagai pelaku pembangunan, bukan penerima pasif. Transformasi dari dalam, bukan dari luar.</p>
+        <p data-lang="en">Communities as agents of development, not passive recipients. Transformation from within, not imposed from outside.</p>
+      </div>
+      <div class="value-card">
+        <h3 data-lang="id">Kolaborasi</h3>
+        <h3 data-lang="en">Collaboration</h3>
+        <p data-lang="id">Sinergi antara masyarakat sipil, pemerintah, swasta, dan komunitas lokal untuk dampak yang lebih besar.</p>
+        <p data-lang="en">Synergy between civil society, government, private sector, and local communities for greater impact.</p>
+      </div>
+      <div class="value-card">
+        <h3 data-lang="id">Inklusivitas</h3>
+        <h3 data-lang="en">Inclusivity</h3>
+        <p data-lang="id">Terbuka untuk semua kalangan tanpa diskriminasi, merayakan keberagaman Indonesia.</p>
+        <p data-lang="en">Open to all without discrimination, celebrating Indonesia's rich diversity.</p>
+      </div>
+      <div class="value-card">
+        <h3 data-lang="id">Integritas</h3>
+        <h3 data-lang="en">Integrity</h3>
+        <p data-lang="id">Transparan dan akuntabel dalam setiap langkah, berorientasi pada dampak sosial bukan keuntungan.</p>
+        <p data-lang="en">Transparent and accountable in every step, focused on social impact rather than personal gain.</p>
+      </div>
+      <div class="value-card">
+        <h3 data-lang="id">Akar yang Kuat</h3>
+        <h3 data-lang="en">Strong Roots</h3>
+        <p data-lang="id">Seperti pohon Jati — tumbuh di kondisi keras, berakar dalam, menghasilkan kayu terbaik. Pertumbuhan yang berkelanjutan, bukan cepat.</p>
+        <p data-lang="en">Like the Jati tree — growing in harsh conditions, deeply rooted, producing the finest wood. Sustainable growth, not rapid.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL STRIP -->
+<div class="legal-strip">
+  <div class="legal-inner">
+    <div class="legal-item">
+      <dt data-lang="id">Status Hukum</dt>
+      <dt data-lang="en">Legal Status</dt>
+      <dd data-lang="id">Yayasan terdaftar, Kemenkumham RI</dd>
+      <dd data-lang="en">Registered foundation, Ministry of Law and Human Rights</dd>
+    </div>
+    <div class="legal-item">
+      <dt data-lang="id">Nomor SK</dt>
+      <dt data-lang="en">Registration No.</dt>
+      <dd>AHU-0037468.AH.01.12.TAHUN 2025</dd>
+    </div>
+    <div class="legal-item">
+      <dt>NPWP</dt>
+      <dd>212651327907000</dd>
+    </div>
+    <div class="legal-item">
+      <dt data-lang="id">Bidang Kegiatan</dt>
+      <dt data-lang="en">Field of Activity</dt>
+      <dd data-lang="id">Sosial, Kemanusiaan, Keagamaan</dd>
+      <dd data-lang="en">Social, Humanitarian, Religious</dd>
+    </div>
+    <div class="legal-item">
+      <dt data-lang="id">Azas</dt>
+      <dt data-lang="en">Basis</dt>
+      <dd>Pancasila</dd>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span>&copy; 2026 Yayasan Jala Transformasi Indonesia</span>
+  <div class="footer-links">
+    <a href="privacy.html" data-lang="id">Kebijakan Privasi</a>
+    <a href="privacy.html" data-lang="en">Privacy Policy</a>
+    <a href="terms.html"   data-lang="id">Syarat &amp; Ketentuan</a>
+    <a href="terms.html"   data-lang="en">Terms of Service</a>
+  </div>
+  <span>jala-transformasi.net</span>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.body.className = 'lang-' + lang;
+    document.getElementById('btn-id').classList.toggle('active', lang === 'id');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.documentElement.lang = lang;
+  }
+</script>
+</body>
+</html>
