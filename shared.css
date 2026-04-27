@@ -186,9 +186,9 @@ nav.scrolled .hamburger span, nav.solid .hamburger span { background: var(--text
 
 /* ── PAGE HERO IMAGE (inner pages) ── */
 .page-hero-img {
-  position: relative; min-height: 52vh;
+  position: relative; min-height: 100vh;
   display: flex; align-items: flex-end;
-  padding: 9rem 3rem 3.5rem;
+  padding: 9rem 3rem 4rem;
   background-size: cover; background-position: center;
 }
 .page-hero-overlay {
@@ -210,7 +210,7 @@ nav.scrolled .hamburger span, nav.solid .hamburger span { background: var(--text
   .lang-toggle { display: none; }
   .page-hero, .section, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
   .page-hero { padding-top: 6rem; }
-  .page-hero-img { padding: 7rem 1.5rem 2.5rem; min-height: 42vh; }
+  .page-hero-img { padding: 7rem 1.5rem 3rem; min-height: 100vh; }
 }
 
 /* ── LANGUAGE ── */
