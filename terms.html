@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syarat &amp; Ketentuan — JATI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --blue: #2e419a; --white: #f8f8f6; --off: #f2f1ed;
+      --gray: #5a5a6a; --light: #dddcd5; --text: #1a1a2a;
+    }
+    body { font-family: 'Lato', sans-serif; background: var(--white); color: var(--text); }
+
+    nav {
+      padding: 1.25rem 3rem; border-bottom: 1px solid var(--light);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .nav-logo img { width: 32px; height: 32px; object-fit: contain; }
+    .nav-logo-text {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--text); line-height: 1.4;
+    }
+    .nav-logo-text span { display: block; font-weight: 300; letter-spacing: 0.12em; color: var(--gray); }
+    .lang-toggle {
+      display: flex; border: 1px solid var(--light); border-radius: 3px; overflow: hidden;
+    }
+    .lang-toggle button {
+      background: none; border: none; padding: 0.35rem 0.7rem;
+      font-family: 'Lato', sans-serif; font-size: 0.62rem; font-weight: 700;
+      letter-spacing: 0.1em; cursor: pointer; color: var(--gray);
+    }
+    .lang-toggle button.active { background: var(--blue); color: #fff; }
+
+    .page-header {
+      background: var(--off); padding: 4rem 3rem 3rem;
+      border-bottom: 1px solid var(--light);
+    }
+    .page-header .eyebrow {
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.4em;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 0.75rem;
+    }
+    .page-header h1 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; color: var(--text);
+    }
+    .page-header h1 strong { font-weight: 900; }
+    .page-header .updated { font-size: 0.75rem; color: var(--gray); margin-top: 0.75rem; }
+
+    .content { max-width: 720px; margin: 0 auto; padding: 4rem 3rem; }
+    .content h2 {
+      font-size: 1.1rem; font-weight: 700; color: var(--text);
+      margin-top: 2.5rem; margin-bottom: 0.75rem;
+    }
+    .content h2:first-child { margin-top: 0; }
+    .content p { font-size: 0.925rem; line-height: 1.8; color: var(--gray); margin-bottom: 1rem; }
+    .content ul {
+      margin: 0.5rem 0 1rem 1.25rem;
+      font-size: 0.925rem; line-height: 1.8; color: var(--gray);
+    }
+    .content ul li { margin-bottom: 0.35rem; }
+    .content a { color: var(--blue); }
+
+    footer {
+      padding: 1.5rem 3rem; border-top: 1px solid var(--light);
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+    footer span, footer a { font-size: 0.75rem; color: var(--gray); text-decoration: none; }
+    footer a:hover { color: var(--blue); }
+    .footer-links { display: flex; gap: 1.5rem; }
+
+    @media (max-width: 768px) {
+      nav, .page-header, .content, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+
+    [data-lang] { display: none; }
+    .lang-id [data-lang="id"] { display: block; }
+    .lang-en [data-lang="en"] { display: block; }
+  </style>
+</head>
+<body class="lang-id">
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logo.png" alt="JATI">
+    <div class="nav-logo-text">JATI <span>Jala Transformasi Indonesia</span></div>
+  </a>
+  <div class="lang-toggle">
+    <button id="btn-id" class="active" onclick="setLang('id')">IND</button>
+    <button id="btn-en"               onclick="setLang('en')">ENG</button>
+  </div>
+</nav>
+
+<div class="page-header">
+  <p class="eyebrow" data-lang="id">Dokumen Hukum</p>
+  <p class="eyebrow" data-lang="en">Legal</p>
+  <h1 data-lang="id">Syarat &amp; <strong>Ketentuan</strong></h1>
+  <h1 data-lang="en">Terms of <strong>Service</strong></h1>
+  <p class="updated" data-lang="id">Terakhir diperbarui: April 2026</p>
+  <p class="updated" data-lang="en">Last updated: April 2026</p>
+</div>
+
+<div class="content">
+
+  <!-- INDONESIAN -->
+  <div data-lang="id">
+    <h2>1. Penerimaan Syarat</h2>
+    <p>Dengan mengakses situs web jala-transformasi.net, Anda menyetujui Syarat dan Ketentuan ini. Jika Anda tidak menyetujuinya, mohon untuk tidak menggunakan situs ini.</p>
+
+    <h2>2. Tentang JATI</h2>
+    <p>Yayasan Jala Transformasi Indonesia (JATI) adalah yayasan non-profit yang terdaftar di Indonesia (AHU-0037468.AH.01.12.TAHUN 2025). Situs web ini dioperasikan semata-mata untuk keperluan informasi publik tentang program dan kegiatan JATI.</p>
+
+    <h2>3. Penggunaan Situs</h2>
+    <p>Situs ini boleh digunakan untuk:</p>
+    <ul>
+      <li>Memperoleh informasi tentang JATI dan program-programnya</li>
+      <li>Menghubungi JATI untuk pertanyaan atau kemitraan</li>
+    </ul>
+    <p>Anda tidak diperkenankan untuk:</p>
+    <ul>
+      <li>Mereproduksi, mendistribusikan, atau menggunakan konten situs ini untuk tujuan komersial tanpa izin tertulis</li>
+      <li>Menggunakan situs ini untuk tujuan yang melanggar hukum yang berlaku</li>
+      <li>Mencoba mengakses sistem atau data yang tidak dimaksudkan untuk akses publik</li>
+    </ul>
+
+    <h2>4. Kekayaan Intelektual</h2>
+    <p>Semua konten di situs ini — termasuk teks, gambar, logo, dan materi lainnya — adalah milik Yayasan Jala Transformasi Indonesia atau pemberi lisensinya. Hak cipta dilindungi oleh undang-undang.</p>
+
+    <h2>5. Tautan ke Situs Lain</h2>
+    <p>Situs ini mungkin berisi tautan ke situs pihak ketiga. JATI tidak bertanggung jawab atas konten atau kebijakan privasi situs-situs tersebut.</p>
+
+    <h2>6. Penafian</h2>
+    <p>Informasi di situs ini disediakan "sebagaimana adanya" tanpa jaminan apapun. JATI tidak bertanggung jawab atas kerugian yang timbul dari penggunaan atau ketidakmampuan menggunakan situs ini.</p>
+
+    <h2>7. Batasan Tanggung Jawab</h2>
+    <p>Sejauh diizinkan oleh hukum yang berlaku, JATI tidak bertanggung jawab atas kerugian langsung, tidak langsung, insidental, atau konsekuensial yang timbul dari penggunaan situs ini.</p>
+
+    <h2>8. Hukum yang Berlaku</h2>
+    <p>Syarat dan Ketentuan ini tunduk pada hukum Republik Indonesia. Setiap sengketa akan diselesaikan di yurisdiksi pengadilan yang berwenang di Indonesia.</p>
+
+    <h2>9. Perubahan</h2>
+    <p>JATI berhak mengubah Syarat dan Ketentuan ini kapan saja. Penggunaan situs setelah perubahan dipublikasikan dianggap sebagai penerimaan perubahan tersebut.</p>
+
+    <h2>10. Kontak</h2>
+    <p>Pertanyaan tentang syarat ini dapat dikirimkan ke:<br>
+    Email: <a href="mailto:info@jala-transformasi.net">info@jala-transformasi.net</a></p>
+  </div>
+
+  <!-- ENGLISH -->
+  <div data-lang="en">
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing jala-transformasi.net, you agree to these Terms of Service. If you do not agree, please do not use this website.</p>
+
+    <h2>2. About JATI</h2>
+    <p>Yayasan Jala Transformasi Indonesia (JATI) is a non-profit foundation registered in Indonesia (AHU-0037468.AH.01.12.TAHUN 2025). This website is operated solely for the purpose of providing public information about JATI's programmes and activities.</p>
+
+    <h2>3. Use of the Website</h2>
+    <p>This website may be used to:</p>
+    <ul>
+      <li>Obtain information about JATI and its programmes</li>
+      <li>Contact JATI for enquiries or partnership discussions</li>
+    </ul>
+    <p>You may not:</p>
+    <ul>
+      <li>Reproduce, distribute, or use content from this website for commercial purposes without written permission</li>
+      <li>Use this website for purposes that violate applicable law</li>
+      <li>Attempt to access systems or data not intended for public access</li>
+    </ul>
+
+    <h2>4. Intellectual Property</h2>
+    <p>All content on this website — including text, images, logos, and other materials — is the property of Yayasan Jala Transformasi Indonesia or its licensors. All rights are reserved under applicable copyright law.</p>
+
+    <h2>5. Links to Third-Party Sites</h2>
+    <p>This website may contain links to third-party websites. JATI is not responsible for the content or privacy practices of those sites.</p>
+
+    <h2>6. Disclaimer</h2>
+    <p>Information on this website is provided "as is" without warranty of any kind. JATI is not liable for any loss arising from the use or inability to use this website.</p>
+
+    <h2>7. Limitation of Liability</h2>
+    <p>To the extent permitted by applicable law, JATI shall not be liable for any direct, indirect, incidental, or consequential damages arising from use of this website.</p>
+
+    <h2>8. Governing Law</h2>
+    <p>These Terms are governed by the laws of the Republic of Indonesia. Any disputes shall be resolved in the competent courts of Indonesia.</p>
+
+    <h2>9. Changes</h2>
+    <p>JATI reserves the right to modify these Terms at any time. Continued use of the website after changes are published constitutes acceptance of the revised Terms.</p>
+
+    <h2>10. Contact</h2>
+    <p>Questions about these Terms can be sent to:<br>
+    Email: <a href="mailto:info@jala-transformasi.net">info@jala-transformasi.net</a></p>
+  </div>
+
+</div>
+
+<footer>
+  <span>&copy; 2026 Yayasan Jala Transformasi Indonesia</span>
+  <div class="footer-links">
+    <a href="index.html"   data-lang="id">Beranda</a>
+    <a href="index.html"   data-lang="en">Home</a>
+    <a href="privacy.html" data-lang="id">Kebijakan Privasi</a>
+    <a href="privacy.html" data-lang="en">Privacy Policy</a>
+  </div>
+  <span>jala-transformasi.net</span>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.body.className = 'lang-' + lang;
+    document.getElementById('btn-id').classList.toggle('active', lang === 'id');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.documentElement.lang = lang;
+  }
+</script>
+</body>
+</html>
