@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bidang Program — JATI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .field-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 540px;
+    }
+    .field-section + .field-section { border-top: 1px solid var(--light); }
+    .field-text {
+      padding: 5rem 3.5rem;
+      display: flex; flex-direction: column; justify-content: center;
+      background: var(--white);
+    }
+    .field-img {
+      background-size: cover; background-position: center;
+      min-height: 320px;
+    }
+    .field-section.reverse .field-text { order: 2; }
+    .field-section.reverse .field-img  { order: 1; }
+
+    .field-num {
+      font-size: 0.55rem; font-weight: 700; letter-spacing: 0.42em;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 0.6rem;
+    }
+    .field-name {
+      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+      font-weight: 900; letter-spacing: -0.025em; color: var(--text);
+      line-height: 1.05; margin-bottom: 1.4rem;
+    }
+    .field-lead {
+      font-size: 0.975rem; line-height: 1.85; color: var(--gray);
+      max-width: 440px; margin-bottom: 2rem;
+      border-left: 2px solid var(--blue); padding-left: 1rem;
+    }
+    .field-activities {
+      list-style: none; display: flex; flex-direction: column; gap: 0.6rem;
+    }
+    .field-activities li {
+      font-size: 0.875rem; line-height: 1.65; color: var(--gray);
+      padding-left: 1.25rem; position: relative;
+    }
+    .field-activities li::before {
+      content: '→';
+      position: absolute; left: 0; top: 0;
+      color: var(--blue); font-size: 0.75rem; line-height: 1.65;
+    }
+
+    @media (max-width: 768px) {
+      .field-section { grid-template-columns: 1fr; }
+      .field-img { min-height: 240px; order: -1 !important; }
+      .field-text { order: 0 !important; padding: 3rem 1.5rem; }
+      .field-lead { max-width: none; }
+    }
+  </style>
+</head>
+<body class="lang-id">
+
+<!-- NAV -->
+<nav class="solid" id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="assets/logo_biru.png" alt="JATI">
+    <div class="nav-logo-text">JATI <span>Jala Transformasi Indonesia</span></div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="about.html"                         data-lang="id">Tentang Kami</a><a href="about.html"                         data-lang="en">About</a></li>
+      <li><a href="programs-fields.html" class="active" data-lang="id">Program</a>     <a href="programs-fields.html" class="active" data-lang="en">Programmes</a></li>
+      <li><a href="contact.html"                        data-lang="id">Kontak</a>       <a href="contact.html"                        data-lang="en">Contact</a></li>
+    </ul>
+    <div class="lang-toggle">
+      <button id="btn-id" class="active" onclick="setLang('id')">IND</button>
+      <button id="btn-en"               onclick="setLang('en')">ENG</button>
+    </div>
+    <button class="hamburger" onclick="openMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" onclick="closeMenu()">&#x2715;</button>
+  <a href="about.html"                         data-lang="id">Tentang Kami</a><a href="about.html"                         data-lang="en">About</a>
+  <a href="programs-fields.html" class="active" data-lang="id">Program</a>     <a href="programs-fields.html" class="active" data-lang="en">Programmes</a>
+  <a href="contact.html"                        data-lang="id">Kontak</a>       <a href="contact.html"                        data-lang="en">Contact</a>
+  <div class="mobile-lang">
+    <button id="mbtn-id" class="active" onclick="setLang('id')">IND</button>
+    <button id="mbtn-en"               onclick="setLang('en')">ENG</button>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <p class="eyebrow" data-lang="id">Bidang Program</p>
+  <p class="eyebrow" data-lang="en">Programme Areas</p>
+  <h1 data-lang="id">Tiga bidang yang menjadi landasan <strong>seluruh program JATI</strong></h1>
+  <h1 data-lang="en">Three fields that form the foundation of <strong>all JATI programmes</strong></h1>
+  <p data-lang="id">Setiap kegiatan JATI berakar pada tiga bidang resmi: kemanusiaan, sosial, dan keagamaan — berjalan bersama menuju transformasi yang menyeluruh dan berkelanjutan.</p>
+  <p data-lang="en">Every JATI activity is rooted in three official fields: humanitarian, social, and Christian formation — working together toward comprehensive and lasting transformation.</p>
+</div>
+
+<!-- FIELD 01: KEMANUSIAAN -->
+<div class="field-section">
+  <div class="field-text">
+    <p class="field-num">01 / Kemanusiaan</p>
+    <h2 class="field-name" data-lang="id">Kemanusiaan</h2>
+    <h2 class="field-name" data-lang="en">Humanitarian</h2>
+    <p class="field-lead" data-lang="id">Kami membangun kapasitas manusia melalui pelatihan terpadu — membekali individu untuk memimpin, tumbuh secara ekonomi, dan melindungi komunitas mereka.</p>
+    <p class="field-lead" data-lang="en">We develop human capacity through integrated training — equipping individuals to lead, grow economically, and protect their communities.</p>
+    <ul class="field-activities" data-lang="id">
+      <li>Pelatihan terpadu dalam kepemimpinan, ekonomi mikro, dan pemberdayaan anak</li>
+      <li>Bantuan darurat bagi komunitas yang terdampak bencana alam</li>
+    </ul>
+    <ul class="field-activities" data-lang="en">
+      <li>Integrated training in leadership, micro-economics, and child empowerment</li>
+      <li>Emergency assistance for disaster-affected communities</li>
+    </ul>
+  </div>
+  <div class="field-img" style="background-image: url('assets/training_workshop.jpg')"></div>
+</div>
+
+<!-- FIELD 02: SOSIAL -->
+<div class="field-section reverse">
+  <div class="field-text">
+    <p class="field-num">02 / Sosial</p>
+    <h2 class="field-name" data-lang="id">Sosial</h2>
+    <h2 class="field-name" data-lang="en">Social</h2>
+    <p class="field-lead" data-lang="id">Kami bekerja bersama komunitas untuk memperkuat ketahanan sosial dan melindungi yang paling rentan.</p>
+    <p class="field-lead" data-lang="en">We work alongside communities to strengthen social resilience and protect the most vulnerable.</p>
+    <ul class="field-activities" data-lang="id">
+      <li>Pendidikan non-formal dan pengembangan potensi lokal</li>
+      <li>Pelayanan kesehatan dan sosial masyarakat</li>
+      <li>Program sosialisasi perlindungan anak, kesetaraan gender, dan anti-kekerasan</li>
+    </ul>
+    <ul class="field-activities" data-lang="en">
+      <li>Non-formal education and local capacity development</li>
+      <li>Community health and social services</li>
+      <li>Awareness programmes on child protection, gender equity, and anti-violence</li>
+    </ul>
+  </div>
+  <div class="field-img" style="background-image: url('assets/community_field.jpg')"></div>
+</div>
+
+<!-- FIELD 03: KEAGAMAAN -->
+<div class="field-section">
+  <div class="field-text">
+    <p class="field-num">03 / Keagamaan</p>
+    <h2 class="field-name" data-lang="id">Keagamaan</h2>
+    <h2 class="field-name" data-lang="en">Christian Formation</h2>
+    <p class="field-lead" data-lang="id">Kami mendampingi pengikut Kristus dalam pemuridan, kepemimpinan, dan pertumbuhan rohani — mempersiapkan mereka untuk hidup dalam pelayanan.</p>
+    <p class="field-lead" data-lang="en">We accompany followers of Christ in discipleship, leadership, and spiritual growth — equipping them for a life of service.</p>
+    <ul class="field-activities" data-lang="id">
+      <li>Pemuridan dan pelatihan kepemimpinan Kristen</li>
+      <li>Pelayanan profetik dan konseling pastoral</li>
+      <li>Retret rohani, seminar, kursus, dan loka karya</li>
+    </ul>
+    <ul class="field-activities" data-lang="en">
+      <li>Discipleship and Christian leadership training</li>
+      <li>Prophetic ministry and pastoral counselling</li>
+      <li>Spiritual retreats, seminars, and workshops</li>
+    </ul>
+  </div>
+  <div class="field-img" style="background-image: url('assets/team_backs_batik.jpg')"></div>
+</div>
+
+<!-- CTA -->
+<section class="section" style="text-align:center; background: var(--off); border-top: 1px solid var(--light);">
+  <div class="section-inner" style="max-width:560px">
+    <p class="eyebrow" data-lang="id">Tertarik?</p>
+    <p class="eyebrow" data-lang="en">Interested?</p>
+    <h2 data-lang="id" style="max-width:none">Ingin tahu lebih lanjut tentang program kami?</h2>
+    <h2 data-lang="en" style="max-width:none">Want to know more about our programmes?</h2>
+    <p class="section-lead" style="max-width:none" data-lang="id">Hubungi kami untuk informasi, kemitraan, atau keterlibatan lebih lanjut.</p>
+    <p class="section-lead" style="max-width:none" data-lang="en">Contact us for information, partnerships, or further involvement.</p>
+    <a href="contact.html" class="btn btn-primary" data-lang="id">Hubungi Kami</a>
+    <a href="contact.html" class="btn btn-primary" data-lang="en">Contact Us</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>&copy; 2026 Yayasan Jala Transformasi Indonesia</span>
+  <div class="footer-links">
+    <a href="privacy.html" data-lang="id">Kebijakan Privasi</a>
+    <a href="privacy.html" data-lang="en">Privacy Policy</a>
+    <a href="terms.html"   data-lang="id">Syarat &amp; Ketentuan</a>
+    <a href="terms.html"   data-lang="en">Terms of Service</a>
+  </div>
+  <span>jala-transformasi.net</span>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.body.className = 'lang-' + lang;
+    document.getElementById('btn-id').classList.toggle('active', lang === 'id');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    const mb_id = document.getElementById('mbtn-id');
+    const mb_en = document.getElementById('mbtn-en');
+    if (mb_id) mb_id.classList.toggle('active', lang === 'id');
+    if (mb_en) mb_en.classList.toggle('active', lang === 'en');
+    document.documentElement.lang = lang;
+  }
+  function openMenu()  { document.getElementById('mobile-menu').classList.add('open'); }
+  function closeMenu() { document.getElementById('mobile-menu').classList.remove('open'); }
+</script>
+</body>
+</html>
