@@ -3,61 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bidang Program — JATI</title>
+  <title>Program — JATI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="shared.css">
   <style>
-    .field-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 540px;
+    /* ── PROGRAM TILES ── */
+    .prog-tile {
+      position: relative;
+      min-height: 480px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
     }
-    .field-section + .field-section { border-top: 1px solid var(--light); }
-    .field-text {
-      padding: 5rem 3.5rem;
-      display: flex; flex-direction: column; justify-content: center;
-      background: var(--white);
-    }
-    .field-img {
-      background-size: cover; background-position: center;
-      min-height: 320px;
-    }
-    .field-section.reverse .field-text { order: 2; }
-    .field-section.reverse .field-img  { order: 1; }
+    .prog-tile + .prog-tile { border-top: 1px solid rgba(255,255,255,0.06); }
 
-    .field-num {
-      font-size: 0.55rem; font-weight: 700; letter-spacing: 0.42em;
-      text-transform: uppercase; color: var(--blue); margin-bottom: 0.6rem;
+    .prog-tile::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(14,22,72,0.94) 0%,
+        rgba(14,22,72,0.72) 48%,
+        rgba(14,22,72,0.14) 100%
+      );
     }
-    .field-name {
-      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
-      font-weight: 900; letter-spacing: -0.025em; color: var(--text);
-      line-height: 1.05; margin-bottom: 1.4rem;
+    .prog-tile.flip::before {
+      background: linear-gradient(
+        to left,
+        rgba(14,22,72,0.94) 0%,
+        rgba(14,22,72,0.72) 48%,
+        rgba(14,22,72,0.14) 100%
+      );
     }
-    .field-lead {
-      font-size: 0.975rem; line-height: 1.85; color: var(--gray);
-      max-width: 440px; margin-bottom: 2rem;
-      border-left: 2px solid var(--blue); padding-left: 1rem;
+    .prog-tile.flip .prog-content { margin-left: auto; }
+
+    .prog-content {
+      position: relative; z-index: 1;
+      max-width: 560px;
+      padding: 5rem 3.5rem;
+      width: 100%;
     }
-    .field-activities {
-      list-style: none; display: flex; flex-direction: column; gap: 0.6rem;
+    .prog-num {
+      font-size: 0.55rem; font-weight: 700; letter-spacing: 0.45em;
+      text-transform: uppercase; color: rgba(255,255,255,0.45);
+      margin-bottom: 0.7rem;
     }
-    .field-activities li {
-      font-size: 0.875rem; line-height: 1.65; color: var(--gray);
-      padding-left: 1.25rem; position: relative;
+    .prog-title {
+      font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+      font-weight: 900; letter-spacing: -0.025em; color: #fff;
+      line-height: 1.05; margin-bottom: 1.25rem;
     }
-    .field-activities li::before {
+    .prog-sub {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: rgba(255,255,255,0.50);
+      margin-top: -0.85rem; margin-bottom: 1.25rem;
+    }
+    .prog-lead {
+      font-size: 0.96rem; line-height: 1.85;
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 1.6rem;
+    }
+    .prog-activities {
+      list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .prog-activities li {
+      font-size: 0.85rem; line-height: 1.6;
+      color: rgba(255,255,255,0.65);
+      padding-left: 1.3rem; position: relative;
+    }
+    .prog-activities li::before {
       content: '→';
       position: absolute; left: 0; top: 0;
-      color: var(--blue); font-size: 0.75rem; line-height: 1.65;
+      color: rgba(255,255,255,0.35); font-size: 0.75rem; line-height: 1.6;
     }
 
     @media (max-width: 768px) {
-      .field-section { grid-template-columns: 1fr; }
-      .field-img { min-height: 240px; order: -1 !important; }
-      .field-text { order: 0 !important; padding: 3rem 1.5rem; }
-      .field-lead { max-width: none; }
+      .prog-tile { min-height: auto; }
+      .prog-tile::before,
+      .prog-tile.flip::before {
+        background: rgba(14,22,72,0.84);
+      }
+      .prog-tile.flip .prog-content { margin-left: 0; }
+      .prog-content { padding: 3.5rem 1.5rem; max-width: none; }
     }
   </style>
 </head>
@@ -97,76 +126,81 @@
 
 <!-- PAGE HERO -->
 <div class="page-hero">
-  <p class="eyebrow" data-lang="id">Bidang Program</p>
-  <p class="eyebrow" data-lang="en">Programme Areas</p>
-  <h1 data-lang="id">Tiga bidang yang menjadi landasan <strong>seluruh program JATI</strong></h1>
-  <h1 data-lang="en">Three fields that form the foundation of <strong>all JATI programmes</strong></h1>
-  <p data-lang="id">Setiap kegiatan JATI berakar pada tiga bidang resmi: kemanusiaan, sosial, dan keagamaan — berjalan bersama menuju transformasi yang menyeluruh dan berkelanjutan.</p>
-  <p data-lang="en">Every JATI activity is rooted in three official fields: humanitarian, social, and Christian formation — working together toward holistic and lasting transformation.</p>
+  <p class="eyebrow" data-lang="id">Program Kami</p>
+  <p class="eyebrow" data-lang="en">Our Programmes</p>
+  <h1 data-lang="id">Program yang membangun kapasitas <strong>mitra pelayanan secara menyeluruh</strong></h1>
+  <h1 data-lang="en">Programmes that build the <strong>holistic capacity of ministry partners</strong></h1>
+  <p data-lang="id">JATI menyelenggarakan program-program yang membekali mitra pelayanan secara menyeluruh — dari pelatihan praktis hingga pendampingan rohani — untuk menghasilkan dampak transformasi yang berkelanjutan di komunitas mereka.</p>
+  <p data-lang="en">JATI runs programmes that build the holistic capacity of ministry partners — from practical training to spiritual formation — producing lasting transformation in their communities.</p>
 </div>
 
-<!-- FIELD 01: KEMANUSIAAN -->
-<div class="field-section">
-  <div class="field-text">
-    <p class="field-num">01 / Kemanusiaan</p>
-    <h2 class="field-name" data-lang="id">Kemanusiaan</h2>
-    <h2 class="field-name" data-lang="en">Humanitarian</h2>
-    <p class="field-lead" data-lang="id">Kami membangun kapasitas manusia melalui pelatihan terpadu — membekali individu untuk memimpin, tumbuh secara ekonomi, dan melindungi komunitas mereka.</p>
-    <p class="field-lead" data-lang="en">We develop human capacity through integrated training — equipping individuals to lead, grow economically, and protect their communities.</p>
-    <ul class="field-activities" data-lang="id">
-      <li>Pelatihan terpadu dalam kepemimpinan, ekonomi mikro, dan pemberdayaan anak</li>
-      <li>Bantuan darurat bagi komunitas yang terdampak bencana alam</li>
+<!-- PROGRAM 01: PELATIHAN NON-FORMAL -->
+<div class="prog-tile" style="background-image: url('assets/prog01_training.jpg')">
+  <div class="prog-content">
+    <p class="prog-num">01</p>
+    <h2 class="prog-title" data-lang="id">Pelatihan Non-Formal</h2>
+    <h2 class="prog-title" data-lang="en">Non-Formal Training</h2>
+    <p class="prog-lead" data-lang="id">Program pelatihan terpadu yang membekali mitra pelayanan dengan keterampilan kepemimpinan, kemampuan lintas budaya, dan kapasitas pengembangan masyarakat yang praktis dan berkelanjutan.</p>
+    <p class="prog-lead" data-lang="en">Integrated training that equips ministry partners with leadership skills, cross-cultural competencies, and practical community development capacity.</p>
+    <ul class="prog-activities" data-lang="id">
+      <li>Kepemimpinan Kristen</li>
+      <li>Coaching</li>
+      <li>Kursus Lintas Budaya</li>
+      <li>Pengembangan Masyarakat</li>
     </ul>
-    <ul class="field-activities" data-lang="en">
-      <li>Integrated training in leadership, micro-economics, and child empowerment</li>
-      <li>Emergency assistance for disaster-affected communities</li>
+    <ul class="prog-activities" data-lang="en">
+      <li>Christian Leadership</li>
+      <li>Coaching</li>
+      <li>Cross-Cultural Course</li>
+      <li>Community Development</li>
     </ul>
   </div>
-  <div class="field-img" style="background-image: url('assets/field01_humanitarian.jpg')"></div>
 </div>
 
-<!-- FIELD 02: SOSIAL -->
-<div class="field-section reverse">
-  <div class="field-text">
-    <p class="field-num">02 / Sosial</p>
-    <h2 class="field-name" data-lang="id">Sosial</h2>
-    <h2 class="field-name" data-lang="en">Social</h2>
-    <p class="field-lead" data-lang="id">Kami bekerja bersama komunitas untuk memperkuat ketahanan sosial dan melindungi yang paling rentan.</p>
-    <p class="field-lead" data-lang="en">We work alongside communities to strengthen social resilience and protect the most vulnerable.</p>
-    <ul class="field-activities" data-lang="id">
-      <li>Pendidikan non-formal dan pengembangan potensi lokal</li>
-      <li>Pelayanan kesehatan dan sosial masyarakat</li>
-      <li>Program sosialisasi perlindungan anak, kesetaraan gender, dan anti-kekerasan</li>
-    </ul>
-    <ul class="field-activities" data-lang="en">
-      <li>Non-formal education and local capacity development</li>
-      <li>Community health and social services</li>
-      <li>Awareness programmes on child protection, gender equity, and anti-violence</li>
-    </ul>
+<!-- PROGRAM 02: PERLINDUNGAN ANAK -->
+<div class="prog-tile flip" style="background-image: url('assets/prog02_child.jpg')">
+  <div class="prog-content">
+    <p class="prog-num">02</p>
+    <h2 class="prog-title" data-lang="id">Perlindungan Anak</h2>
+    <h2 class="prog-title" data-lang="en">Child Protection</h2>
+    <p class="prog-sub" data-lang="id">dalam konteks pelayanan Kristen</p>
+    <p class="prog-sub" data-lang="en">in the context of Christian ministry</p>
+    <p class="prog-lead" data-lang="id">Program yang membangun kesadaran dan kapasitas mitra pelayanan untuk melindungi anak-anak dalam konteks pelayanan — memastikan setiap anak tumbuh dalam lingkungan yang aman dan sehat.</p>
+    <p class="prog-lead" data-lang="en">A programme that builds awareness and capacity among ministry partners to protect children in ministry contexts — ensuring every child grows in a safe and healthy environment.</p>
   </div>
-  <div class="field-img" style="background-image: url('assets/field02_social.jpg')"></div>
 </div>
 
-<!-- FIELD 03: KEAGAMAAN -->
-<div class="field-section">
-  <div class="field-text">
-    <p class="field-num">03 / Keagamaan</p>
-    <h2 class="field-name" data-lang="id">Keagamaan</h2>
-    <h2 class="field-name" data-lang="en">Christian Formation</h2>
-    <p class="field-lead" data-lang="id">Kami mendampingi pengikut Kristus dalam pemuridan, kepemimpinan, dan pertumbuhan rohani — mempersiapkan mereka untuk hidup dalam pelayanan.</p>
-    <p class="field-lead" data-lang="en">We accompany followers of Christ in discipleship, leadership, and spiritual growth — equipping them for a life of service.</p>
-    <ul class="field-activities" data-lang="id">
-      <li>Pemuridan dan pelatihan kepemimpinan Kristen</li>
-      <li>Pelayanan profetik dan konseling pastoral</li>
-      <li>Retret rohani, seminar, kursus, dan loka karya</li>
-    </ul>
-    <ul class="field-activities" data-lang="en">
-      <li>Discipleship and Christian leadership training</li>
-      <li>Prophetic ministry and pastoral counselling</li>
-      <li>Spiritual retreats, seminars, and workshops</li>
-    </ul>
+<!-- PROGRAM 03: KEPEDULIAN MITRA PELAYANAN -->
+<div class="prog-tile" style="background-image: url('assets/prog03_care.jpg')">
+  <div class="prog-content">
+    <p class="prog-num">03</p>
+    <h2 class="prog-title" data-lang="id">Kepedulian Mitra Pelayanan</h2>
+    <h2 class="prog-title" data-lang="en">Ministry Partner Care</h2>
+    <p class="prog-lead" data-lang="id">Program yang merawat kesejahteraan mitra pelayanan secara holistik — mendukung kesehatan mental, emosional, dan rohani mereka agar dapat melayani dengan berkelanjutan.</p>
+    <p class="prog-lead" data-lang="en">A programme that cares for the holistic wellbeing of ministry partners — supporting their mental, emotional, and spiritual health so they can serve sustainably.</p>
   </div>
-  <div class="field-img" style="background-image: url('assets/field03_formation.jpg')"></div>
+</div>
+
+<!-- PROGRAM 04: PROGRAM PEMURIDAN -->
+<div class="prog-tile flip" style="background-image: url('assets/prog04_discipleship.jpg')">
+  <div class="prog-content">
+    <p class="prog-num">04</p>
+    <h2 class="prog-title" data-lang="id">Program Pemuridan</h2>
+    <h2 class="prog-title" data-lang="en">Discipleship Programme</h2>
+    <p class="prog-lead" data-lang="id">Pendampingan pemuridan yang membantu mitra pelayanan bertumbuh dalam iman, karakter, dan komitmen — membentuk mereka menjadi Pemimpin-pemimpin yang sehat dan efektif.</p>
+    <p class="prog-lead" data-lang="en">Discipleship accompaniment that helps ministry partners grow in faith, character, and commitment — forming them into healthy and effective Leaders.</p>
+  </div>
+</div>
+
+<!-- PROGRAM 05: RETRET ROHANI & SEMINAR -->
+<div class="prog-tile" style="background-image: url('assets/prog05_retreat.jpg')">
+  <div class="prog-content">
+    <p class="prog-num">05</p>
+    <h2 class="prog-title" data-lang="id">Retret Rohani &amp; Seminar</h2>
+    <h2 class="prog-title" data-lang="en">Spiritual Retreats &amp; Seminars</h2>
+    <p class="prog-lead" data-lang="id">JATI mengadakan retret rohani dan seminar yang menyediakan ruang bagi mitra pelayanan untuk berhenti sejenak, diperbarui, dan diperlengkapi untuk kembali melayani dengan lebih baik.</p>
+    <p class="prog-lead" data-lang="en">JATI organises spiritual retreats and seminars — providing ministry partners with space to pause, be renewed, and return to service better equipped.</p>
+  </div>
 </div>
 
 <!-- CTA -->
