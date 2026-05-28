@@ -68,6 +68,10 @@
     .prog-activities {
       list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
     }
+    /* override specificity tie between .prog-activities and [data-lang] */
+    [data-lang].prog-activities { display: none; }
+    .lang-id [data-lang="id"].prog-activities { display: flex; }
+    .lang-en [data-lang="en"].prog-activities { display: flex; }
     .prog-activities li {
       font-size: 0.85rem; line-height: 1.6;
       color: rgba(255,255,255,0.65);
