@@ -25,13 +25,9 @@
       color: var(--text); letter-spacing: -0.01em;
     }
 
-    /* ── IMAGE + TEXT ── */
-    .split {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 5rem; align-items: center; margin-top: 3rem;
-    }
-    .split img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
-    .split-text p {
+    /* ── WHO WE ARE TEXT ── */
+    .about-text { max-width: 700px; margin-top: 1.5rem; }
+    .about-text p {
       font-size: 0.95rem; line-height: 1.85; color: var(--gray); margin-bottom: 1.1rem;
     }
 
@@ -121,11 +117,11 @@
     <p class="eyebrow" data-lang="en">Who We Are</p>
     <h2 data-lang="id" style="margin-bottom:1.25rem">Organisasi yang <strong>berakar dalam</strong></h2>
     <h2 data-lang="en" style="margin-bottom:1.25rem">An organisation with <strong>deep roots</strong></h2>
-    <div style="max-width:700px">
-      <p class="split-text" style="font-size:0.95rem; line-height:1.85; color:var(--gray); margin-bottom:1.1rem" data-lang="id">Yayasan Jala Transformasi Indonesia berdiri secara resmi pada Mei 2024. Gagasan pendiriannya lahir dari kerinduan para pendiri untuk menghadirkan wadah yang dapat memberkati bangsa Indonesia, khususnya dalam bidang sosial, kemanusiaan, dan keagamaan.</p>
-      <p class="split-text" style="font-size:0.95rem; line-height:1.85; color:var(--gray); margin-bottom:1.1rem" data-lang="en">Yayasan Jala Transformasi Indonesia was officially established in May 2024. The foundation grew from a shared desire among its founders to create an organisation that truly benefits the Indonesian people — especially in the social, humanitarian, and community development areas.</p>
-      <p class="split-text" style="font-size:0.95rem; line-height:1.85; color:var(--gray); margin-bottom:1.1rem" data-lang="id">Kami percaya bahwa perubahan yang nyata dimulai dari dalam — dari pemimpin lokal yang diperlengkapi dengan baik untuk melayani komunitas mereka sendiri. Nama "Jala" mencerminkan jaringan: sebuah jala yang merangkul dan mengangkat bersama.</p>
-      <p class="split-text" style="font-size:0.95rem; line-height:1.85; color:var(--gray); margin-bottom:1.1rem" data-lang="en">We believe real change starts from within — from local leaders well-equipped to serve their own communities. The name "Jala" means "net" — a network that embraces and lifts together.</p>
+    <div class="about-text">
+      <p data-lang="id">Yayasan Jala Transformasi Indonesia berdiri secara resmi pada Mei 2024. Gagasan pendiriannya lahir dari kerinduan para pendiri untuk menghadirkan wadah yang dapat memberkati bangsa Indonesia, khususnya dalam bidang sosial, kemanusiaan, dan keagamaan.</p>
+      <p data-lang="en">Yayasan Jala Transformasi Indonesia was officially established in May 2024. The foundation grew from a shared desire among its founders to create an organisation that truly benefits the Indonesian people — especially in the social, humanitarian, and community development areas.</p>
+      <p data-lang="id">Kami percaya bahwa perubahan yang nyata dimulai dari dalam — dari pemimpin lokal yang diperlengkapi dengan baik untuk melayani komunitas mereka sendiri. Nama "Jala" mencerminkan jaringan: sebuah jala yang merangkul dan mengangkat bersama.</p>
+      <p data-lang="en">We believe real change starts from within — from local leaders well-equipped to serve their own communities. The name "Jala" means "net" — a network that embraces and lifts together.</p>
     </div>
   </div>
 </section>
