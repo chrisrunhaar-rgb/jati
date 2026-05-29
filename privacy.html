@@ -234,6 +234,7 @@
     localStorage.setItem("jati-lang", lang);
     closeMenu();
   }
+  (function(){ const l = localStorage.getItem('jati-lang'); if (l && l !== 'id') setLang(l); })();
 </script>
 </body>
 </html>

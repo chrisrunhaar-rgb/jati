@@ -229,6 +229,7 @@
   }
   function openMenu()  { document.getElementById('mobile-menu').classList.add('open'); }
   function closeMenu() { document.getElementById('mobile-menu').classList.remove('open'); }
+  (function(){ const l = localStorage.getItem('jati-lang'); if (l && l !== 'id') setLang(l); })();
 </script>
 </body>
 </html>
