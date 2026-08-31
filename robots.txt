@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /mobilisasi
 Disallow: /GPJ-KPM
+Disallow: /hub-preview
 Disallow: /api/

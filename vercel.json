@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/mobilisasi", "destination": "/api/mobilisasi" },
-    { "source": "/GPJ-KPM", "destination": "/api/gpj-kpm" }
+    { "source": "/GPJ-KPM", "destination": "/api/gpj-kpm" },
+    { "source": "/hub-preview", "destination": "/api/hub-preview" }
   ]
 }
