@@ -4,7 +4,7 @@
 // internals leaks beyond "incorrect PIN".
 const crypto = require('crypto');
 
-const PIN = '5824';
+const PIN = '0139';
 const COOKIE_NAME = 'hubprev_session';
 const MAX_AGE = 60 * 60 * 24 * 30; // 30 days
 // Must match the signing secret in api/hub-preview.js exactly.
