@@ -6,7 +6,13 @@ const crypto = require('crypto');
 
 const PIN = '0139';
 const COOKIE_NAME = 'gpjkpm_session';
-const MAX_AGE = 60 * 60 * 24 * 30; // 30 days
+// Short-lived on purpose: this cookie only needs to survive the immediate
+// location.reload() the gate does right after a correct PIN. The page
+// handler (api/gpj-kpm.js) clears it the instant it serves the real deck,
+// so re-opening the page - even seconds later - asks for the PIN again.
+// Was 30 days; that let anyone who'd ever entered the PIN once skip it
+// indefinitely on that browser.
+const MAX_AGE = 30; // seconds
 // Must match the signing secret in api/gpj-kpm.js exactly.
 const SECRET = 'jati-gpjkpm-7d2b5f91ac3e08d4b6f1a9c2e5d8b3f7-signing-key';
 

@@ -6,7 +6,13 @@ const crypto = require('crypto');
 
 const PIN = '0139';
 const COOKIE_NAME = 'hubprev_session';
-const MAX_AGE = 60 * 60 * 24 * 30; // 30 days
+// Short-lived on purpose: this cookie only needs to survive the immediate
+// location.reload() the gate does right after a correct PIN. The page
+// handler (api/hub-preview.js) clears it the instant it serves the real
+// deck, so re-opening the page - even seconds later - asks for the PIN
+// again. Was 30 days; that let anyone who'd ever entered the PIN once
+// skip it indefinitely on that browser.
+const MAX_AGE = 30; // seconds
 // Must match the signing secret in api/hub-preview.js exactly.
 const SECRET = 'jati-hubpreview-3f7a9c2e5b8d1f04a6c3e9b7d2f5a8c1-signing-key';
 

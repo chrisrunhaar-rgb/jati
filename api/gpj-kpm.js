@@ -59,6 +59,11 @@ module.exports = (req, res) => {
   res.setHeader('X-Robots-Tag', 'noindex, nofollow');
 
   if (authed) {
+    // One-time use: clear the session cookie the instant we grant access,
+    // so a refresh, a new tab, or coming back later all re-show the PIN
+    // gate. This page is served once per successful PIN entry, not once
+    // per browser.
+    res.setHeader('Set-Cookie', `${COOKIE_NAME}=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0`);
     const deckHtml = Buffer.from(DECK_HTML_B64, 'base64').toString('utf8');
     res.status(200).send(deckHtml);
     return;
